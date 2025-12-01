@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MBartiX – IT Jack of All Trades</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-image: url('pg.png');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+    }
+    /* Styl popupu Discord */
+    #discordPopup {
+      position: absolute;
+      display: none;
+      background-color: rgba(31, 41, 55, 0.95);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      font-weight: 500;
+      z-index: 50;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center relative">
+
+  <div class="bg-gray-800 bg-opacity-80 rounded-3xl p-16 text-center max-w-3xl shadow-lg">
+    
+    <h1 class="text-5xl font-bold mb-2">Master BartiX</h1>
+    <h2 class="text-2xl text-gray-300 mb-6">IT Jack of All Trades</h2>
+
+    <p class="text-gray-200 mb-4 text-left">
+      🌍 Hey, I’m Bochenol AKA Master BartiX. I’m a self-taught programmer and digital art designer currently working on AI. <br>
+      💻 Besides programming, I’m studying Russian and Japanese, as well as human anatomy. <br>
+      ⏰ My current timezone is UTC +1. <br><br>
+
+      💻 I am a programmer in lots of languages: <br>
+      <strong>Beginner:</strong> HTML, Assembler, SQL <br>
+      <strong>Intermediate:</strong> C, C++, Luau <br>
+      <strong>Advanced:</strong> Python <br><br>
+
+      🎨 I am also an art designer: <br>
+      <strong>Intermediate:</strong> Blender, Krita, GIMP
+    </p>
+
+    <p class="text-gray-200 mb-6 text-left">
+      📌 I accept any tasks such as: Discord bots, games, programs, databases, art, models, VFX. <br><br>
+      📬 For collabs or tasks, contact me via Discord DMs or email. <br>
+    </p>
+
+    <div class="flex justify-center gap-4 mt-4 flex-wrap relative">
+      <a href="https://discord.gg/TNSZYnBtCu" target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg transition">
+        Studio
+      </a>
+      <a href="#" id="discordBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition">
+        Discord
+      </a>
+      <a href="mailto: master.bartix@gmail.com" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg transition">
+        Mail
+      </a>
+    </div>
+
+  </div>
+
+  
+  <div id="discordPopup">My Discord: mbartixak</div>
+
+  <script>
+    const btn = document.getElementById('discordBtn');
+    const popup = document.getElementById('discordPopup');
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+
+      
+      const rect = btn.getBoundingClientRect();
+      popup.style.top = rect.bottom + window.scrollY + 5 + 'px';
+      popup.style.left = rect.left + window.scrollX + 'px';
+    });
+
+    
+    document.addEventListener('click', (e) => {
+      if (!btn.contains(e.target) && !popup.contains(e.target)) {
+        popup.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html
